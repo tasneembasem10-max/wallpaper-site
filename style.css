@@ -436,3 +436,47 @@ nav a[aria-current="page"] {
 #backToTop:hover {
   background-color: #ff6b76;
 }
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #14141a;
+  border-top: 1px solid #3a1519;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+  z-index: 200;
+}
+
+.cookie-banner.show {
+  display: flex;
+}
+
+.cookie-banner p {
+  margin: 0;
+  color: #b8b8c0;
+  max-width: 60ch;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.cookie-decline {
+  padding: 12px 28px;
+  background-color: transparent;
+  color: #b8b8c0;
+  border: 1px solid #3a1519;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+}

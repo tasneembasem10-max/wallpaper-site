@@ -30,6 +30,55 @@ fetch("footer.html")
     backToTopButton.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+    fetch("footer.html")
+  .then(function (response) {
+    return response.text();
+  })
+  .then(function (html) {
+    document.getElementById("footer-placeholder").innerHTML = html;
+
+    const yearSpan = document.getElementById("year");
+    const currentYear = new Date().getFullYear();
+    yearSpan.textContent = currentYear;
+
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 400) {
+        backToTopButton.classList.add("show");
+      } else {
+        backToTopButton.classList.remove("show");
+      }
+    });
+
+    backToTopButton.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    const cookieBanner = document.getElementById("cookieBanner");
+    const cookieAccept = document.getElementById("cookieAccept");
+    const cookieDecline = document.getElementById("cookieDecline");
+
+    const consentChoice = localStorage.getItem("cookieConsent");
+
+    if (!consentChoice) {
+      cookieBanner.classList.add("show");
+    }
+
+    cookieAccept.addEventListener("click", function () {
+      localStorage.setItem("cookieConsent", "accepted");
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted'
+      });
+      cookieBanner.classList.remove("show");
+    });
+
+    cookieDecline.addEventListener("click", function () {
+      localStorage.setItem("cookieConsent", "declined");
+      cookieBanner.classList.remove("show");
+    });
+  });
   });
 
 const thumbnails = document.querySelectorAll(".wallpaper-thumb");
@@ -83,3 +132,4 @@ document.addEventListener("keydown", function (event) {
     lightbox.classList.remove("active");
   }
 });
+
