@@ -133,3 +133,25 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+const shareButtons = document.querySelectorAll(".share-button");
+
+shareButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const figure = button.closest("figure");
+    const wallpaperId = figure.id;
+    const wallpaperTitle = figure.querySelector("figcaption").textContent;
+    const shareUrl = window.location.href.split("#")[0] + "#" + wallpaperId;
+
+    if (navigator.share) {
+      navigator.share({
+        title: wallpaperTitle + " | My Wallpaper Designs",
+        text: "Check out this wallpaper: " + wallpaperTitle,
+        url: shareUrl
+      });
+    } else {
+      navigator.clipboard.writeText(shareUrl);
+      alert("Link copied to clipboard!");
+    }
+  });
+});
+

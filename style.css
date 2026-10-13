@@ -94,7 +94,13 @@ h2 {
   border-radius: 10px;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.6s, transform 0.4s, box-shadow 0.4s;
+  transition: opacity 0.6s, transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.5s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 32px rgba(230, 57, 70, 0.4);
+  filter: brightness(1.05);
 }
 .gallery-grid img.loaded {
   opacity: 1;
@@ -479,4 +485,33 @@ nav a[aria-current="page"] {
   font-size: 0.85rem;
   cursor: pointer;
   font-family: inherit;
+}
+.wallpaper-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.wallpaper-actions .download-link {
+  flex: 1;
+  margin-top: 0;
+}
+
+.share-button {
+  padding: 8px 16px;
+  border: 1px solid #e63946;
+  border-radius: 999px;
+  background-color: transparent;
+  color: #e63946;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.share-button:hover {
+  background-color: #e63946;
+  color: #ffffff;
 }
