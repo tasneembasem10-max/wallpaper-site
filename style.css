@@ -530,3 +530,27 @@ nav a[aria-current="page"] {
   background-color: #4a7fe6;
   color: #ffffff;
 }
+
+.collection-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.collection-row .category-card {
+  max-width: 320px;
+}
+
+.collection-description {
+  color: #b8b8c0;
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .collection-row {
+    grid-template-columns: 300px 1fr;
+    gap: 32px;
+  }
+}
