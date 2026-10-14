@@ -554,3 +554,19 @@ nav a[aria-current="page"] {
     gap: 32px;
   }
 }
+
+.post-meta {
+  color: #9a9aa3;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: -8px;
+  margin-bottom: 24px;
+}
+
+.post-signature {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: #e63946;
+  margin-top: 32px;
+}
