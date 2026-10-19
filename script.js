@@ -154,4 +154,19 @@ shareButtons.forEach(function (button) {
     }
   });
 });
+const scrollTracks = document.querySelectorAll(".gallery-track");
+
+scrollTracks.forEach(function (track) {
+  const container = track.closest(".gallery-scroll");
+  const leftArrow = container.querySelector(".scroll-arrow-left");
+  const rightArrow = container.querySelector(".scroll-arrow-right");
+
+  leftArrow.addEventListener("click", function () {
+    track.scrollBy({ left: -240, behavior: "smooth" });
+  });
+
+  rightArrow.addEventListener("click", function () {
+    track.scrollBy({ left: 240, behavior: "smooth" });
+  });
+});
 

@@ -570,3 +570,92 @@ nav a[aria-current="page"] {
   color: #e63946;
   margin-top: 32px;
 }
+
+.collection-block {
+  max-width: 500px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.collection-block .category-card {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.collection-description {
+  margin-top: 16px;
+  color: #b8b8c0;
+  line-height: 1.7;
+}
+
+.gallery-scroll {
+  position: relative;
+  margin-top: 24px;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 12px;
+}
+
+.gallery-track figure {
+  flex: 0 0 auto;
+  width: 220px;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.gallery-track img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.6s, transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5s;
+}
+
+.gallery-track img.loaded {
+  opacity: 1;
+}
+
+.gallery-track img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(230, 57, 70, 0.35);
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(20, 20, 26, 0.85);
+  color: #e8e8ea;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-arrow-left {
+  left: -4px;
+}
+
+.scroll-arrow-right {
+  right: -4px;
+}
+
+.scroll-arrow:hover {
+  background-color: #e63946;
+}
